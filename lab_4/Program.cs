@@ -13,8 +13,8 @@ namespace lab_4
         static string ToString(Method M, double[] range1, double e, Function F)
         {
             long t = DateTime.Now.Ticks;
-            double y = M(range1, e, F);
-            return (DateTime.Now.Ticks - t).ToString() + " " + y.ToString();
+            double x = M(range1, e, F);
+            return (DateTime.Now.Ticks - t).ToString() + "\t" + x.ToString() + "\t" + F(x);
         }
         static void Main(string[] args)
         {
