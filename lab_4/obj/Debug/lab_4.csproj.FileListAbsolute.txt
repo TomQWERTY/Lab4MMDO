@@ -1,0 +1,12 @@
+D:\University\Математичні-методи дослідження операцій\Лабораторна робота №4\lab_4\lab_4\bin\Debug\lab_4.exe.config
+D:\University\Математичні-методи дослідження операцій\Лабораторна робота №4\lab_4\lab_4\obj\Debug\lab_4.csprojResolveAssemblyReference.cache
+D:\University\Математичні-методи дослідження операцій\Лабораторна робота №4\lab_4\lab_4\bin\Debug\lab_4.exe
+D:\University\Математичні-методи дослідження операцій\Лабораторна робота №4\lab_4\lab_4\bin\Debug\lab_4.pdb
+D:\University\Математичні-методи дослідження операцій\Лабораторна робота №4\lab_4\lab_4\obj\Debug\lab_4.exe
+D:\University\Математичні-методи дослідження операцій\Лабораторна робота №4\lab_4\lab_4\obj\Debug\lab_4.pdb
+E:\Univer\Math_m\Lab_4\Sasha1\lab_4\bin\Debug\lab_4.exe.config
+E:\Univer\Math_m\Lab_4\Sasha1\lab_4\obj\Debug\lab_4.exe
+E:\Univer\Math_m\Lab_4\Sasha1\lab_4\obj\Debug\lab_4.pdb
+E:\Univer\Math_m\Lab_4\Sasha1\lab_4\bin\Debug\lab_4.exe
+E:\Univer\Math_m\Lab_4\Sasha1\lab_4\bin\Debug\lab_4.pdb
+E:\Univer\Math_m\Lab_4\Sasha1\lab_4\obj\Debug\lab_4.csprojResolveAssemblyReference.cache
