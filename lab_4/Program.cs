@@ -12,9 +12,9 @@ namespace lab_4
     {
         static string ToString(Method M, double[] range1, double e, Function F)
         {
-            long t = DateTime.Now.Ticks;
+            long time = DateTime.Now.Ticks;
             double x = M(range1, e, F);
-            return (DateTime.Now.Ticks - t).ToString() + "\t" + x.ToString() + "\t" + F(x);
+            return (DateTime.Now.Ticks - time).ToString() + "\t" + x.ToString() + "\t" + F(x);
         }
         static void Main(string[] args)
         {
