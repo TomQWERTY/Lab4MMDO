@@ -22,9 +22,9 @@ namespace lab_4
             double e = Math.Pow(10, -4);
             Function F = x => Math.Pow(x, 4) + 4 * Math.Pow(x, 3) - 3 * Math.Pow(x, 2) - 36 * x + 45;
             Console.WriteLine(ToString(LibraryOfMethods.Duhot, range, e, F));
-            Console.WriteLine(ToString(LibraryOfMethods.Fibonacci, range, e, F));
             Console.WriteLine(ToString(LibraryOfMethods.Lokal, range, e, F));
             Console.WriteLine(ToString(LibraryOfMethods.Golt, range, e, F));
+            Console.WriteLine(ToString(LibraryOfMethods.Fibonacci, range, e, F));
             Console.ReadKey();
         }
     }
