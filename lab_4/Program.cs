@@ -18,11 +18,10 @@ namespace lab_4
         }
         static void Main(string[] args)
         {
-            double[] range = new double[2] { -100, 100 },  range_ = new double[2];
+            double[] range = new double[2] { 1, 2 },  range_ = new double[2];
             double e = Math.Pow(10, -4);
             Function F = x => Math.Pow(x, 4) + 4 * Math.Pow(x, 3) - 3 * Math.Pow(x, 2) - 36 * x + 45;
-            Array.Copy(range, range_, 2);
-            Console.WriteLine(ToString(LibraryOfMethods.Local, range_, e, F));
+            Console.WriteLine(ToString(LibraryOfMethods.Local, new double[2] { -100, 100 }, e, F));
             Array.Copy(range, range_, 2);
             Console.WriteLine(ToString(LibraryOfMethods.Duhot, range_, e, F));
             Array.Copy(range, range_, 2);
