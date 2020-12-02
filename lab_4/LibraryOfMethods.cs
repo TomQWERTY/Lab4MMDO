@@ -45,8 +45,8 @@ namespace lab_4
         private static double[] LokalInside(double[] range1, double e, Function F)
         {
             double[] res = new double[5];
-            double h = range1[1] - range1[0];
-            double x0 = (range1[0] + range1[1]) / 2;
+            double h = (range1[1] - range1[0]) / 100;
+            double x0 = range1[0] + h;
             double x1 = 0, x2 = 0;
             double f1 = F(x0);
             double f2;
@@ -108,15 +108,15 @@ namespace lab_4
                     range1[1] = v;
                     v = u;
                     fv = fu;
-                    u = range1[1] + range1[0] - v;
+                    u = range1[0] + range1[1] - v;
                     fu = F(u);
                 }
                 else
                 {
-                    range1[1] = u;
+                    range1[0] = u;
                     u = v;
                     fu = fv;
-                    v = range1[1] + range1[0] - u;
+                    v = range1[0] + range1[1] - u;
                     fv = F(v);
                 }
                 if (u > v)

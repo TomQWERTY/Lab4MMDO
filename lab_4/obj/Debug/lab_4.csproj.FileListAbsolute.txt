@@ -22,3 +22,9 @@ E:\Univer\Math_m\Lab4MMDO\lab_4\obj\Debug\lab_4.pdb
 E:\Univer\Math_m\Lab4MMDO\lab_4\obj\Debug\lab_4.csprojResolveAssemblyReference.cache
 E:\Univer\Math_m\Lab4MMDO\lab_4\bin\Debug\lab_4.exe
 E:\Univer\Math_m\Lab4MMDO\lab_4\bin\Debug\lab_4.pdb
+D:\University\Математичні-методи дослідження операцій\Лабораторна робота №4\GitHub_lab_4\Lab4MMDO\lab_4\bin\Debug\lab_4.exe.config
+D:\University\Математичні-методи дослідження операцій\Лабораторна робота №4\GitHub_lab_4\Lab4MMDO\lab_4\obj\Debug\lab_4.exe
+D:\University\Математичні-методи дослідження операцій\Лабораторна робота №4\GitHub_lab_4\Lab4MMDO\lab_4\obj\Debug\lab_4.pdb
+D:\University\Математичні-методи дослідження операцій\Лабораторна робота №4\GitHub_lab_4\Lab4MMDO\lab_4\bin\Debug\lab_4.exe
+D:\University\Математичні-методи дослідження операцій\Лабораторна робота №4\GitHub_lab_4\Lab4MMDO\lab_4\bin\Debug\lab_4.pdb
+D:\University\Математичні-методи дослідження операцій\Лабораторна робота №4\GitHub_lab_4\Lab4MMDO\lab_4\obj\Debug\lab_4.csprojResolveAssemblyReference.cache
