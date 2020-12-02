@@ -16,7 +16,7 @@ namespace lab_4
             double[] range_ = new double[2];
             Array.Copy(range, range_, 2);
             double[] res = M(range_, e, F);
-            return (DateTime.Now.Ticks - time).ToString() + "\t" + res[0] + "\t" + res[1];
+            return (DateTime.Now.Ticks - time).ToString() + "\t" + res[2] + "\t" + res[0] + "\t" + res[1];
         }
         static void Main(string[] args)
         {

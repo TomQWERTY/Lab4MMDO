@@ -11,6 +11,7 @@ namespace lab_4
         public static double[] Duhot(double[] range, double e, Function F)
         {
             double q = e / 3;
+            int n = 0;
             do
             {
                 double x1 = (range[1] + range[0] - q) / 2;
@@ -23,10 +24,11 @@ namespace lab_4
                 {
                     range[0] = x1;
                 }
+                n++;
             }
             while (range[1] - range[0] > e);
             double x = (range[0] + range[1]) / 2;
-            return new double[2] { x, F(x) };
+            return new double[3] { x, F(x), n };
         }
 
         public static double[] Local(double[] range1, double e, Function F)
@@ -34,17 +36,17 @@ namespace lab_4
             double[] res = LocalInside(range1, e, F);
             if (res[0] == 0)
             {
-                return new double[2] { res[3], res[4] };
+                return new double[3] { res[3], res[4], res[5] };
             }
             else
             {
-                return new double[2] { res[1], F(res[1]) };
+                return new double[3] { res[1], F(res[1]), res[5] };
             }
         }
 
         private static double[] LocalInside(double[] range1, double e, Function F)
         {
-            double[] res = new double[5];
+            double[] res = new double[6];
             double h = e * 10;
             double x0 = range1[0] + h;
             double x1 = 0, x2 = 0;
@@ -63,6 +65,7 @@ namespace lab_4
                 }
             }
             while (f1 <= f2 && Math.Abs(h) >= e);
+            int n = 0;
             if (Math.Abs(h) > e)
             {
                 do
@@ -71,6 +74,7 @@ namespace lab_4
                     f1 = f2;
                     x2 = x1 + h;
                     f2 = F(x2);
+                    n++;
                 } while (f1 >= f2);
                 if (h > 0)
                 {
@@ -92,6 +96,7 @@ namespace lab_4
             res[2] = x1;
             res[3] = range1[0];
             res[4] = range1[1];
+            res[5] = n;
             return res;
         }
 
@@ -101,6 +106,7 @@ namespace lab_4
             double v = range1[1] + range1[0] - u;
             double fu = F(u);
             double fv = F(v);
+            int n = 0;
             do
             {
                 if (fu <= fv)
@@ -126,10 +132,11 @@ namespace lab_4
                     fu = F(u);
                     fv = F(v);
                 }
+                n++;
             }
             while (range1[1] - range1[0] >= e);
             double x = (range1[0] + range1[1]) / 2;
-            return new double[2] { x, F(x) };
+            return new double[3] { x, F(x), n };
         }
 
         public static double[] Fibonacci(double[] range1, double e, Function F)
@@ -166,7 +173,7 @@ namespace lab_4
                 }
             }
             double x = (range1[0] + range1[1]) / 2;
-            return new double[2] { x, F(x) };
+            return new double[3] { x, F(x), n };
         }
 
         private static double FibonacciNumber(int n)
@@ -195,8 +202,10 @@ namespace lab_4
             double[] lucky_3 = LocalInside(range, e, F);
             double x0 = lucky_3[3], x1 = lucky_3[2], x2 = lucky_3[4], x3 = 0, x = 0;
             double f0 = F(x0), f1 = F(x1), f2 = F(x2), f3 = 0, f = 0;
+            int n = 0;
             do
             {
+                n++;
                 x = (x0 + x1) / 2 + (f1 - f0) * (x2 - x0) * (x2 - x1) / (2 * ((f1 - f0) * (x2 - x0) - (f2 - f0) * (x1 - x0)));
                 f = F(x);
                 if (Math.Abs(x1 - x) >= e && Math.Abs(x2 - x) >= e)
@@ -233,7 +242,7 @@ namespace lab_4
                 }
             }
             while (true);
-            return new double[2] { x, f };
+            return new double[3] { x, f, n };
         }
     }
 }
