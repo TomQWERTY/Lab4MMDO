@@ -29,9 +29,9 @@ namespace lab_4
             return new double[2] { x, F(x) };
         }
 
-        public static double[] Lokal(double[] range1, double e, Function F)
+        public static double[] Local(double[] range1, double e, Function F)
         {
-            double[] res = LokalInside(range1, e, F);
+            double[] res = LocalInside(range1, e, F);
             if (res[0] == 0)
             {
                 return new double[2] { res[3], res[4] };
@@ -42,10 +42,10 @@ namespace lab_4
             }
         }
 
-        private static double[] LokalInside(double[] range1, double e, Function F)
+        private static double[] LocalInside(double[] range1, double e, Function F)
         {
             double[] res = new double[5];
-            double h = (range1[1] - range1[0]) / 100;
+            double h = e * 10;
             double x0 = range1[0] + h;
             double x1 = 0, x2 = 0;
             double f1 = F(x0);
@@ -95,7 +95,7 @@ namespace lab_4
             return res;
         }
 
-        public static double[] Golt(double[] range1, double e, Function F)
+        public static double[] Gold(double[] range1, double e, Function F)
         {
             double u = range1[0] + (3 - Math.Sqrt(5)) / 2 * (range1[1] - range1[0]);
             double v = range1[1] + range1[0] - u;
@@ -190,9 +190,50 @@ namespace lab_4
             return n - 2;
         }
 
-        public void Parabola(double[] range, double e, Function F)
+        public static double[] Parabola(double[] range, double e, Function F)
         {
-
+            double[] lucky_3 = LocalInside(range, e, F);
+            double x0 = lucky_3[3], x1 = lucky_3[2], x2 = lucky_3[4], x3 = 0, x = 0;
+            double f0 = F(x0), f1 = F(x1), f2 = F(x2), f3 = 0, f = 0;
+            do
+            {
+                x = (x0 + x1) / 2 + (f1 - f0) * (x2 - x0) * (x2 - x1) / (2 * ((f1 - f0) * (x2 - x0) - (f2 - f0) * (x1 - x0)));
+                f = F(x);
+                if (Math.Abs(x1 - x) >= e && Math.Abs(x2 - x) >= e)
+                {
+                    if (x < x1)
+                    {
+                        x3 = x2;
+                        f3 = f2;
+                        x2 = x1;
+                        f2 = f1;
+                        x1 = x;
+                        f1 = f;
+                    }
+                    else if (x > x1)
+                    {
+                        x3 = x2;
+                        f3 = f2;
+                        x2 = x;
+                        f2 = f;
+                    }
+                    if (f1 > f2)
+                    {
+                        x0 = x1;
+                        f0 = f1;
+                        x1 = x2;
+                        f1 = f2;
+                        x2 = x3;
+                        f2 = f3;
+                    }
+                }
+                else
+                {
+                    break;
+                }
+            }
+            while (true);
+            return new double[2] { x, f };
         }
     }
 }
