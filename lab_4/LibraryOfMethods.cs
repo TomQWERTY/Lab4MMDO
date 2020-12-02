@@ -8,7 +8,7 @@ namespace lab_4
 {
     class LibraryOfMethods
     {                
-        public static double Duhot(double[] range, double e, Function F)
+        public static double[] Duhot(double[] range, double e, Function F)
         {
             double q = e / 3;
             do
@@ -25,13 +25,28 @@ namespace lab_4
                 }
             }
             while (range[1] - range[0] > e);
-
-            return (range[0] + range[1]) / 2;
+            double x = (range[0] + range[1]) / 2;
+            return new double[2] { x, F(x) };
         }
-        public static double Lokal(double[] range1, double e, Function F)
-        {            
+
+        public static double[] Lokal(double[] range1, double e, Function F)
+        {
+            double[] res = LokalInside(range1, e, F);
+            if (res[0] == 0)
+            {
+                return new double[2] { res[3], res[4] };
+            }
+            else
+            {
+                return new double[2] { res[1], F(res[1]) };
+            }
+        }
+
+        private static double[] LokalInside(double[] range1, double e, Function F)
+        {
+            double[] res = new double[5];
             double h = range1[1] - range1[0];
-            double x0 = range1[0];
+            double x0 = (range1[0] + range1[1]) / 2;
             double x1 = 0, x2 = 0;
             double f1 = F(x0);
             double f2;
@@ -47,7 +62,7 @@ namespace lab_4
                     f2 = F(x2);
                 }
             }
-            while (f1 <= f2 || Math.Abs(h) >= e);
+            while (f1 <= f2 && Math.Abs(h) >= e);
             if (Math.Abs(h) > e)
             {
                 do
@@ -67,14 +82,20 @@ namespace lab_4
                     range1[0] = x2;
                     range1[1] = x1 - h;
                 }
-                return range1[0];
+                res[0] = 0;
             }
             else
             {
-                return x0;
+                res[0] = 1;
             }
+            res[1] = x0;
+            res[2] = x1;
+            res[3] = range1[0];
+            res[4] = range1[1];
+            return res;
         }
-        public static double Golt(double[] range1, double e, Function F)
+
+        public static double[] Golt(double[] range1, double e, Function F)
         {
             double u = range1[0] + (3 - Math.Sqrt(5)) / 2 * (range1[1] - range1[0]);
             double v = range1[1] + range1[0] - u;
@@ -107,10 +128,11 @@ namespace lab_4
                 }
             }
             while (range1[1] - range1[0] >= e);
-            return (range1[0] + range1[1]) / 2;
+            double x = (range1[0] + range1[1]) / 2;
+            return new double[2] { x, F(x) };
         }
 
-        public static double Fibonacci(double[] range1, double e, Function F)
+        public static double[] Fibonacci(double[] range1, double e, Function F)
         {
             int n = Find_n(range1, e);
             double u = range1[0] + (FibonacciNumber(n) / FibonacciNumber(n + 2)) * (range1[1] - range1[0]);
@@ -143,7 +165,8 @@ namespace lab_4
                     fv = F(v);
                 }
             }
-            return (range1[0] + range1[1]) / 2;
+            double x = (range1[0] + range1[1]) / 2;
+            return new double[2] { x, F(x) };
         }
 
         private static double FibonacciNumber(int n)
@@ -167,14 +190,9 @@ namespace lab_4
             return n - 2;
         }
 
-        //public void Parabola()
-        //{
-        //    Array.Copy(range, range1, 2);
-        //    long t = DateTime.Now.Ticks;
+        public void Parabola(double[] range, double e, Function F)
+        {
 
-        //    time = DateTime.Now.Ticks - t;
-        //}
-        
-
+        }
     }
 }

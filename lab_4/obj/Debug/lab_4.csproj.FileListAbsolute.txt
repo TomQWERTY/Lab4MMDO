@@ -19,3 +19,6 @@ D:\University\Математичні-методи дослідження опе�
 E:\Univer\Math_m\Lab4MMDO\lab_4\bin\Debug\lab_4.exe.config
 E:\Univer\Math_m\Lab4MMDO\lab_4\obj\Debug\lab_4.exe
 E:\Univer\Math_m\Lab4MMDO\lab_4\obj\Debug\lab_4.pdb
+E:\Univer\Math_m\Lab4MMDO\lab_4\obj\Debug\lab_4.csprojResolveAssemblyReference.cache
+E:\Univer\Math_m\Lab4MMDO\lab_4\bin\Debug\lab_4.exe
+E:\Univer\Math_m\Lab4MMDO\lab_4\bin\Debug\lab_4.pdb
